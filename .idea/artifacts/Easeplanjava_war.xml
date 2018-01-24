@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Easeplanjava:war">
+    <output-path>$PROJECT_DIR$/../Easeplanjava/target</output-path>
+    <root id="archive" name="ease-plan-java.war">
+      <element id="artifact" artifact-name="Easeplanjava:war exploded" />
+    </root>
+  </artifact>
+</component>
