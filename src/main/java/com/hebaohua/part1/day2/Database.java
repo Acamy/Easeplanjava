@@ -44,7 +44,7 @@ public class Database {
         Database db = new Database();
         db.add(new CD("abc", "abc",4,60, "..."));
         db.add(new CD("def", "def",4,60, "..."));
-        db.add(new DVD("GGG", "gggf",4,"...."));
+        db.add(new DVD("GGG", "ggg",4,"...."));
         db.list();
     }
 }
