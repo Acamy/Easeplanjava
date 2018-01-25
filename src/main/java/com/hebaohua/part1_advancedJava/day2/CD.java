@@ -1,4 +1,4 @@
-package com.hebaohua.part1.day2;
+package com.hebaohua.part1_advancedJava.day2;
 
 /**
  * @author Hebh
@@ -66,5 +66,19 @@ public class CD extends Item{
     @Override
     public void print() {
         System.out.println("title:" + title + ";artist:" + artist);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "CD{" +
+                "artist='" + artist + '\'' +
+                ", numOfTracks=" + numOfTracks +
+                ", title='" + title + '\'' +
+                '}';
     }
 }

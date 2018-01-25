@@ -1,4 +1,4 @@
-package com.hebaohua.part1.day2;
+package com.hebaohua.part1_advancedJava.day2;
 
 /**
  * @author Hebh
@@ -18,5 +18,6 @@ public class Item {
     }
 
     public void print() {
+        System.out.println("Item");
     }
 }

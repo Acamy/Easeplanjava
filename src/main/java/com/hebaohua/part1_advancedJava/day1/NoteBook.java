@@ -1,4 +1,4 @@
-package com.hebaohua.part1.day1;
+package com.hebaohua.part1_advancedJava.day1;
 
 import java.util.ArrayList;
 
