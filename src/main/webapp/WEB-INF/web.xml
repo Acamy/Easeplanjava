@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
 
+<web-app>
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
+    <!--容器在加载时就调用Init方法-->
+    <load-on-startup>0</load-on-startup>
+
+    <servlet-name>test</servlet-name>
+    <servlet-class>com.hebaohua.part4_servlet.TestServlet</servlet-class>
     <init-param>
       <param-name>key1</param-name>
       <param-value>value1</param-value>
@@ -15,15 +17,19 @@
       <param-name>key2</param-name>
       <param-value>value2</param-value>
     </init-param>
-
-    <servlet-name>test</servlet-name>
-    <servlet-class>com.hebaohua.part4_servlet.TestServlet</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>test</servlet-name>
     <url-pattern>/test</url-pattern>
   </servlet-mapping>
 
+  <!-- 设置Session的有效时间:以分钟为单位-->
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+
+  <!--全局参数-->
   <context-param>
     <param-name>globalData1</param-name>
     <param-value>123</param-value>
@@ -33,4 +39,8 @@
     <param-value>456</param-value>
   </context-param>
 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/view/404.html</location>
+  </error-page>
 </web-app>

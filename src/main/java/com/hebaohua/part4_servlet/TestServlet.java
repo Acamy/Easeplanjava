@@ -15,9 +15,20 @@ import java.io.PrintWriter;
  * @description:
  */
 public class TestServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response)
             throws ServletException, IOException {
+        //向浏览器输出内容
+        PrintWriter writer = response.getWriter();
+        writer.write("<html>");
+        writer.write("<body>");
+        writer.write("<h2>This is a servlet Test");
+        writer.write("</body></html>");
+    }
+
+    @Override
+    public void init() throws ServletException {
         //获取初始化参数
         ServletConfig config = this.getServletConfig();
         System.out.println(config.getInitParameter("key1"));
@@ -31,15 +42,11 @@ public class TestServlet extends HttpServlet {
         ctx.setAttribute("arrt1","attrvalue1");
         System.out.println(ctx.getAttribute("arrt1"));
 
+
 //        ctx.getRealPath()
 //                ctx.getResource()
 //                        ctx.getResourceAsStream()
 
-        //向浏览器输出内容
-        PrintWriter writer = response.getWriter();
-        writer.write("<html>");
-        writer.write("<body>");
-        writer.write("<h2>This is a servlet Test");
-        writer.write("</body></html>");
     }
+
 }
