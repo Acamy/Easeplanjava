@@ -1,4 +1,6 @@
-package com.hebaohua.part5_DB.day3;
+package com.hebaohua.part6_Spring.config;
+
+import java.awt.*;
 
 /**
  * @author Hebh
@@ -30,9 +32,23 @@ public class User {
         this.age = age;
     }
 
+    public void init_user(){
+        System.out.println("initUser");
+    }
 
+    public void destroy_user(){
+        System.out.println("destoryUser");
+    }
 
     public User() {
         super();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

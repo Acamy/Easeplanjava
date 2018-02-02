@@ -15,7 +15,7 @@
     </select>
 
     <update id="updateUser" parameterType="User">
-        update mybatis_use set age=#{age} where name=#{name}
+        update mybatis_user set age=#{age} where name=#{name}
     </update>
 
     <delete id="deleteUser" parameterType="java.lang.String">

@@ -15,8 +15,33 @@ public class TestMyBatis {
     }
 
     public static void main(String[] args) {
-        testAdd();
-        getUser();
+        //testAdd();
+        //getUser();
+        //delete();
+        update();
+    }
+
+    public static void update(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            User user = new User("zhanjindong", new Integer(25));
+            userMapper.updateUser(user);
+            sqlSession.commit();// 这里一定要提交，不然数据进不去数据库中
+        } finally {
+            sqlSession.close();
+        }
+    }
+
+    public static void delete(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            userMapper.deleteUser("zhangsann");
+            sqlSession.commit();// 这里一定要提交，不然数据进不去数据库中
+        } finally {
+            sqlSession.close();
+        }
     }
 
     public static void testAdd() {
